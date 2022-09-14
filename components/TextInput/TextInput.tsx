@@ -17,6 +17,7 @@ interface Props extends TextInputProps {
   borderColor?: ColorValue;
   borderWidth?: number;
   borderRadius?: number;
+  textColor?: ColorValue;
 }
 
 const StyledTextInput: React.FC<Props> = (props: Props) => {
@@ -26,11 +27,11 @@ const StyledTextInput: React.FC<Props> = (props: Props) => {
     leftContent,
     rightContent,
     backgroundColor = containerStyle?.backgroundColor ||
-      component[theme].textInput.backgroundColor,
+    component[theme].textInput.backgroundColor,
     borderColor = component[theme].textInput.borderColor,
     borderWidth = containerStyle?.borderWidth || 1,
     borderRadius = containerStyle?.borderRadius || 8,
-
+    textColor,
     ...otherProps
   } = props;
 
@@ -54,7 +55,7 @@ const StyledTextInput: React.FC<Props> = (props: Props) => {
         placeholderTextColor={component[theme].textInput.placeholderTextColor}
         style={{
           flex: 1,
-          color: component[theme].textInput.color,
+          color: textColor || component[theme].textInput.color,
           paddingVertical: containerStyle?.padding || 10,
           fontFamily: "Ubuntu_400Regular",
           marginLeft: leftContent ? 5 : 0,
