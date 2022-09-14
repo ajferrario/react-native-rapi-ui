@@ -195,7 +195,7 @@ const Picker: React.FC<Props> = ({
           borderWidth: borderWidth,
           borderRadius: borderRadius,
           flexDirection: "row",
-          padding: 14,
+          padding: 10,
           paddingHorizontal: 20,
           alignItems: "center",
           justifyContent: "space-between",
